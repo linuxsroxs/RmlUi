@@ -199,7 +199,7 @@ UniquePtr<const StyleSheetContainer> StyleSheetFactory::LoadStyleSheetContainer(
 		}
 	}
 
-	return new_style_sheet;
+	return UniquePtr<const StyleSheetContainer>{std::move(new_style_sheet)};
 }
 
 } // namespace Rml
